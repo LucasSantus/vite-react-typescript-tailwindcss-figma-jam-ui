@@ -7,13 +7,19 @@ import ReactFlow, {
   Controls,
   Node,
   useEdgesState,
+  useNodesState,
 } from "reactflow";
 import "reactflow/dist/style.css";
 import { zinc } from "tailwindcss/colors";
+import DefaultEdge from "./components/edges/DefaultEdge";
 import { Square } from "./components/nodes/Square";
 
 const NODE_TYPES = {
   square: Square,
+};
+
+const EDGE_TYPES = {
+  default: DefaultEdge,
 };
 
 const INITIAL_NODES = [
@@ -39,6 +45,7 @@ const INITIAL_NODES = [
 
 function App() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState(INITIAL_NODES);
 
   const onConnect = useCallback((connection: Connection) => {
     return setEdges((edges) => addEdge(connection, edges));
@@ -48,11 +55,16 @@ function App() {
     <div style={{ width: "100vw", height: "100vh" }}>
       <ReactFlow
         nodeTypes={NODE_TYPES}
-        nodes={INITIAL_NODES}
+        edgeTypes={EDGE_TYPES}
+        nodes={nodes}
         connectionMode={ConnectionMode.Loose}
         edges={edges}
         onEdgesChange={onEdgesChange}
+        onNodesChange={onNodesChange}
         onConnect={onConnect}
+        defaultEdgeOptions={{
+          type: "default",
+        }}
       >
         <Background gap={12} size={2} color={zinc[200]} />
         <Controls />
