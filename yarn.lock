@@ -551,7 +551,7 @@
     "@reactflow/core" "11.5.1"
     classcat "^5.0.3"
 
-"@reactflow/core@11.5.1":
+"@reactflow/core@11.5.1", "@reactflow/core@^11.3.3":
   version "11.5.1"
   resolved "https://registry.yarnpkg.com/@reactflow/core/-/core-11.5.1.tgz#1aa8f75b4f1bedbb82618f13eae5ef0145693c51"
   integrity sha512-63pXpKNW5YHk8hOWpt7RaftSn7g92BvCCGpsUUaRDDuHvxmcqmMKPrAFkBPVc5JJ+Wubx4drThYJizgVP/j9/w==
@@ -577,6 +577,17 @@
     classcat "^5.0.3"
     d3-selection "^3.0.0"
     d3-zoom "^3.0.0"
+    zustand "^4.3.1"
+
+"@reactflow/node-resizer@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@reactflow/node-resizer/-/node-resizer-2.0.0.tgz#093bdb60e28dc5ea3d360f6f377001a455f40d4f"
+  integrity sha512-7jMyPluayvwwXWEU4hWg/hJD1Pa41BV1GSvKkN7vtDADck4kmXv+qvBwQ5QhTNvcFd+oWwZ9bOeo8yCTxEXxew==
+  dependencies:
+    "@reactflow/core" "^11.3.3"
+    classcat "^5.0.4"
+    d3-drag "^3.0.0"
+    d3-selection "^3.0.0"
     zustand "^4.3.1"
 
 "@reactflow/node-toolbar@1.1.4":
@@ -947,7 +958,7 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-classcat@^5.0.3:
+classcat@^5.0.3, classcat@^5.0.4:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/classcat/-/classcat-5.0.4.tgz#e12d1dfe6df6427f260f03b80dc63571a5107ba6"
   integrity sha512-sbpkOw6z413p+HDGcBENe498WM9woqWHiJxCq7nvmxe9WmrUmqfAcxpIwAiMtM5Q3AhYkzXcNQHqsWq0mND51g==
